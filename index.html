@@ -2,37 +2,75 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head><style>
-    body{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
- 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .main-container {
 
- .image1{
-height: 30px;
-background-color: crimson;
+    display: flex;
+    justify-content: center;
+  }
 
- }
- #img1{
-    
- }
+
+  .image1 {
+    height: 30px;
+
+
+  }
+
+  #img1 {
+    position: relative;
+    left: -320px;
+    top: 60px;
+    background-color: white;
+    border-radius: 50%;
+  }
+
+  #img2 {
+    position: relative;
+    left: -50px;
+    top: 60px;
+
+  }
 </style>
 
 <body>
- 
-        <img src="four.jpg" alt="" class="image">
-    
-    <div class="contaner">
-        <img src="prev.png  " alt="" class="image1" id="img1">
-        <img src="next.png" alt="" class="image1" id="img2">
-    </div>
+  <div class="main-container">
+    <img src="four.jpg" alt="" class="image" id="image">
 
+    <div class="contaner">
+      <img src="prev.png  " alt="" class="image1" id="img1" onclick="prev()">
+      <img src="next.png" alt="" class="image1" id="img2" onclick="next()">
+    </div>
+  </div>
 </body>
+<script>
+  const array = ["./one.jpg", "./two.jpg", "./three.jpg", "./four.jpg", "./five.jpg", "./six.jpg"]
+const image=document.getElementById('image')
+let count =0
+ function prev(){
+  if(count ==0){
+    count = array.length-1
+  }else{
+    count--
+  }
+  image.src=array[count]
+ }
+ function next(){
+  if(count==array.length-1)
+{
+  count =0
+
+}else{
+  count++
+}
+image.src=array[count]
+
+ }
+
+</script>
 
 <script>
 
